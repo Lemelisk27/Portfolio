@@ -1,7 +1,7 @@
 :root {
-    --light: red;
-    --dark: black;
-    --darker: white;
+    --light: lightblue;
+    --dark: darkblue;
+    --darker: black;
     --hover: darkgray;
 }
 
@@ -143,4 +143,10 @@ main .first-link {
 
 .contact a:hover {
     color: var(--hover)
+}
+
+footer {
+    text-align: center;
+    color: var(--dark);
+    padding: 5rem;
 }
