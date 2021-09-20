@@ -1,7 +1,8 @@
 :root {
-    --light: lightblue;
-    --dark: darkblue;
-    --darker: black;
+    --light: red;
+    --dark: black;
+    --darker: white;
+    --hover: darkgray;
 }
 
 * {
@@ -64,13 +65,13 @@ header nav a:visited {
     color: var(--light);
 }
 
-header nav a:active {
-    color: var(--darker)
+header nav a:hover {
+    color: var(--hover)
 }
 
 figure {
     background: linear-gradient(
-       0deg, lightblue, darkblue
+       0deg, var(--light), var(--dark)
     );
     width: 100%;
     height: 10rem;
@@ -140,6 +141,6 @@ main .first-link {
     color: var(--dark);
 }
 
-.contact a:active {
-    color: var(--darker)
+.contact a:hover {
+    color: var(--hover)
 }
