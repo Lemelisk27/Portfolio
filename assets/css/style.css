@@ -131,6 +131,7 @@ main .first-link {
     display: flex;
     padding: 5rem;
     justify-content: space-evenly;
+    color: var(--dark);
 }
 
 .contact a {
