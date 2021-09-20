@@ -1,0 +1,123 @@
+:root {
+    --light: lightblue;
+    --dark: darkblue;
+    --darker: black;
+}
+
+* {
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+html {
+    font-size: 62.5%;
+}
+
+body {
+    background-color: var(--light);
+    font-size: 1.75rem;
+}
+
+h1 {
+    font-size: 4rem;
+}
+
+h2 {
+    font-size: 3rem;
+}
+
+h3 {
+    font-size: 2.5rem;
+}
+
+header {
+    display: flex;
+    flex-direction: row;
+    background-color: var(--dark);
+}
+
+header h1 {
+    color: var(--dark);
+    background-color: var(--light);
+    padding: .5rem;
+    margin: 1rem 0;
+    border-radius: 8px 0 0 8px;
+}
+
+header img {
+    height: 6rem;
+    margin: 1rem 0;
+    border-radius: 0 8px 8px 0;
+}
+
+header nav {
+    margin: auto .5rem .5rem auto;
+}
+
+header nav a {
+    color: var(--light);
+}
+
+header nav a:visited {
+    color: var(--light);
+}
+
+header nav a:active {
+    color: var(--darker);
+}
+
+figure {
+    background: linear-gradient(0deg, lightblue, darkblue);
+    width: 100%;
+    height: 20rem;
+    margin: 0;
+}
+
+figcaption h3 {
+    position: relative;
+    width: 28rem;
+    margin: -5rem 5rem 5rem 75%;
+    color: var(--dark);
+    text-align: center;
+    padding: .5rem;
+    background-color: var(--light);
+}
+
+main {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+main #about-me {
+    display: flex;
+    flex: 1 0;
+    margin-top: 2rem;
+}
+
+main h2 {
+    color: var(--dark);
+    text-align: right;
+    border-right: .5rem solid var(--dark);
+    padding: 1.5rem;
+    margin: 1rem 2rem 1rem 0;
+    width: 15%;
+}
+
+main section nav {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+}
+
+main section nav img {
+    width: 40%;
+}
+
+.titles {
+    color: var(--dark);
+    background: var(--light);
+    width: 15rem;
+    position: relative;
+    margin: -10rem 0 5rem 2rem;
+}
