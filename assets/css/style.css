@@ -1,7 +1,7 @@
 :root {
     --light: lightblue;
     --dark: darkblue;
-    --darker: black;
+    --heliotrope: #e866ec;
     --hover: darkgray;
 }
 
@@ -120,7 +120,12 @@ main nav {
 main img {
     border: .5rem solid var(--dark);
     margin: .5rem;
+    padding: 1px;
     width: 48%;
+}
+
+main img:hover {
+    box-shadow: inset 0px 0px 8px var(--heliotrope), 0 0 15px var(--dark)
 }
 
 main .first-link {
@@ -150,4 +155,27 @@ footer {
     text-align: center;
     color: var(--dark);
     padding: 5rem;
+}
+
+@media screen and (max-width: 768px) {
+
+    figcaption h3 {
+        margin-left: auto;
+        margin-right: 0;
+    }
+
+    main {
+        flex-direction: column;
+    }
+    
+    main .first-link,
+    main img {
+        width: 90%;
+    }
+
+    main h2 {
+        text-align: left;
+        font-size: 2rem;
+    }
+
 }
