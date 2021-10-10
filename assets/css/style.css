@@ -82,10 +82,10 @@ figcaption h3 {
     position: relative;
     width: 28rem;
     margin: -5rem 5rem 5rem 75%;
-    color: var(--dark);
+    color: white;
     text-align: center;
     padding: .5rem;
-    background-color: var(--light);
+    background-color: transparent;
 }
 
 main section {

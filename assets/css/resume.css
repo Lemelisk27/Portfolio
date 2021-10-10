@@ -1,0 +1,51 @@
+* {
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1;
+}
+
+header {
+    text-align: center;
+    margin: 2rem;
+    padding: 0;
+}
+
+header h1 {
+    margin: 0
+}
+
+header p {
+    margin: 0;
+}
+
+main {
+    margin-left: 5rem;
+    margin-right: 5rem;
+}
+
+main p {
+    margin: 0
+}
+
+.title {
+    text-decoration: underline;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+}
+
+.content {
+    margin-left: 2rem;
+}
+
+.experienceCard {
+    margin-bottom: 1rem;
+}
+
+.experienceCard ul {
+    margin: 0;
+}
+
+.experienceTitle {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
