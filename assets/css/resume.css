@@ -3,6 +3,12 @@
     line-height: 1;
 }
 
+body {
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 700px;
+}
+
 header {
     text-align: center;
     margin: 2rem;
@@ -15,11 +21,6 @@ header h1 {
 
 header p {
     margin: 0;
-}
-
-main {
-    margin-left: 5rem;
-    margin-right: 5rem;
 }
 
 main p {
