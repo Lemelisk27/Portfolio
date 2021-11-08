@@ -1,5 +1,6 @@
 const updateBtn = document.querySelector("#updateBtn")
 const deleteBtn = document.querySelector("#deleteBtn")
+const primaryBtn = document.querySelector("#primaryBtn")
 const projectId = document.querySelector("#updateBtn").dataset.index
 
 updateBtn.addEventListener("click", (e)=>{
@@ -34,6 +35,27 @@ deleteBtn.addEventListener("click",(e)=>{
     }
     fetch("/api/projects/deleteproject",{
         method:"DELETE",
+        body:JSON.stringify(userObj),
+        headers: {
+            "Content-Type":"application/json"
+        }
+    }).then(res=>{
+        if(res.ok){
+            location.href = "/api/viewprojects"
+        }
+        else {
+            console.log("An Error Occured")
+        }
+    })
+})
+
+primaryBtn.addEventListener("click",(e)=>{
+    e.preventDefault()
+    const userObj = {
+        id:projectId
+    }
+    fetch("/api/projects/primaryproject",{
+        method:"PUT",
         body:JSON.stringify(userObj),
         headers: {
             "Content-Type":"application/json"

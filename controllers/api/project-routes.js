@@ -62,6 +62,51 @@ router.put("/updateproject",(req,res)=>{
     })
 })
 
+router.put("/primaryproject",(req,res)=>{
+    Project.findOne({
+        attributes:["id"],
+        where:{
+            primary:true
+        }
+    }).then(primaryPro=>{
+        hbsPrimary = primaryPro.get({plain:true})
+        if (hbsPrimary.id == req.body.id) {
+            res.json(hbsPrimary)
+            return
+        }
+        else {
+            Project.update({
+                primary:false
+            },
+            {
+                where: {
+                    id:hbsPrimary.id
+                }
+            }).then(updatePrimary=>{
+                Project.update({
+                    primary:true
+                },
+                {
+                    where: {
+                        id:req.body.id
+                    }
+                }).then(newPrimary=>{
+                    res.json(newPrimary)
+                }).catch(err=>{
+                    console.log(err)
+                    res.status(500).json({message:"An Error Occured",err:err})
+                })
+            }).catch(err=>{
+                console.log(err)
+                res.status(500).json({message:"An Error Occured",err:err})
+            })
+        }
+    }).catch(err=>{
+        console.log(err)
+        res.status(500).json({message:"An Error Occured",err:err})
+    })
+})
+
 router.delete("/deleteproject",(req,res)=>{
     if(!req.session.user){
         res.redirect("/api/login")
