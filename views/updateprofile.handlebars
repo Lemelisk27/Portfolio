@@ -1,0 +1,57 @@
+<form class="col-6 bg-dark mx-auto mt-5 p-3">
+    <div class="row px-2">
+        <div class="col-6">
+            <label for="firstName" class="text-light">First name</label>
+            <input type="text" class="form-control" id="firstName" value="{{user.first_name}}">
+        </div>
+        <div class="col-6">
+            <label for="last_name" class="text-light">Last name</label>
+            <input type="text" class="form-control" id="lastName" value="{{user.last_name}}">
+        </div>
+    </div>
+    <div class="row px-2">
+        <div class="col-12">
+            <label for="street" class="text-light">Street</label>
+            <input type="text" class="form-control" id="street" value="{{user.street}}">
+        </div>
+        <div class="col-6">
+            <label for="city" class="text-light">City</label>
+            <input type="text" class="form-control" id="city" value="{{user.city}}">
+        </div>
+        <div class="col-2">
+            <label for="state" class="text-light">State</label>
+            <input type="text" class="form-control" id="state" value="{{user.state}}">
+        </div>
+        <div class="col-4">
+            <label for="zip" class="text-light">Zip Code</label>
+            <input type="text" class="form-control" id="zip" value="{{user.zip}}">
+        </div>
+    </div>
+    <div class="row px-2">
+        <div class="col-6">
+            <label for="phone" class="text-light">Phone Number</label>
+            <input type="text" class="form-control" id="phone" value="{{user.phone}}">
+        </div>
+        <div class="col-6">
+            <label for="email" class="text-light">Email</label>
+            <input type="text" class="form-control" id="email" value="{{user.email}}">
+        </div>
+        <div class="col-6">
+            <label for="github" class="text-light">Github Username</label>
+            <input type="text" class="form-control" id="github" value="{{user.github}}">
+        </div>
+        <div class="col-6">
+            <label for="linkedin" class="text-light">LinkedIn Username</label>
+            <input type="text" class="form-control" id="linkedin" value="{{user.linkedin}}">
+        </div>        
+    </div>
+    <div class="col-12 px-2">
+        <label for="bio" class="text-light">About Me</label>
+        <textarea name="bio" id="bio" rows="10" class="form-control col-12">{{user.bio}}</textarea>
+    </div>
+    <div class="d-flex justify-content-center">
+        <button type="submit" class="btn btn-primary bg-secondary border-0 col-3 mt-3" id="submitBtn">Submit</button>
+    </div>
+</form>
+
+<script src="/js/updateprofile.js"></script>
