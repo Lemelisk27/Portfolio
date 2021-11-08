@@ -1,0 +1,30 @@
+<div>
+    <img src="{{project.img}}" alt="Project {{project.id}}" class="d-flex col-lg-9 mx-auto mt-4">
+</div>
+
+<form class="col-6 bg-dark mx-auto my-2 p-3">
+    <div class="row px-2">
+        <div class="col-12">
+            <label for="title" class="text-light">Title</label>
+            <input type="text" class="form-control" id="title" value="{{project.title}}">
+        </div>
+        <div class="col-12">
+            <label for="description" class="text-light">Description</label>
+            <textarea name="description" id="description" rows="10" class="form-control col-12">{{project.description}}</textarea>
+        </div>
+        <div class="col-12">
+            <label for="githubUrl" class="text-light">GitHub URL</label>
+            <input type="text" class="form-control" id="githubUrl" value="{{project.github_url}}">
+        </div>
+        <div class="col-12">
+            <label for="siteUrl" class="text-light">Site URL</label>
+            <input type="text" class="form-control" id="siteUrl" value="{{project.site_url}}">
+        </div>
+    </div>
+    <div class="d-flex justify-content-center mt-3">
+        <button type="submit" class="btn btn-primary bg-secondary border-0 col-3 mr-2" id="updateBtn" data-index="{{project.id}}">Update</button>
+        <button type="submit" class="btn btn-primary bg-secondary border-0 col-3 ml-2" id="deleteBtn">Delete</button>
+    </div>
+</form>
+
+<script src="/js/viewprojectsbyid.js"></script>

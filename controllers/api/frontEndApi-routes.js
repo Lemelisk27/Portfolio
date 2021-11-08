@@ -143,6 +143,27 @@ router.get("/viewprojects",(req,res)=>{
     })
 })
 
+router.get("/viewprojects/:id",(req,res)=>{
+    if(!req.session.user){
+        res.redirect("/api/login")
+        return
+    }
+    const api = true
+    const apipage = "/viewprojects" 
+    Project.findOne({
+        where: {
+            id:req.params.id
+        }
+    }).then(projectData=>{
+        const hbsProject = projectData.get({plain:true})
+        res.render("viewprojectsbyid",{
+            project:hbsProject,
+            api:api,
+            apipage:apipage
+        })
+    })
+})
+
 router.get("/newproject",(req,res)=>{
     if(!req.session.user){
         res.redirect("/api/login")

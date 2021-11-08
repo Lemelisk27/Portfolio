@@ -39,6 +39,46 @@ router.post("/newproject",(req,res)=>{
     })
 })
 
+router.put("/updateproject",(req,res)=>{
+    if(!req.session.user){
+        res.redirect("/api/login")
+        return
+    }
+    Project.update({
+        title:req.body.title,
+        description:req.body.description,
+        github_url:req.body.github_url,
+        site_url:req.body.site_url
+    },
+    {
+        where: {
+            id:req.body.id
+        }
+    }).then(updateProject=>{
+        res.json(updateProject)
+    }).catch(err=>{
+        console.log(err)
+        res.status(500).json({message:"An Error Occured",err:err})
+    })
+})
+
+router.delete("/deleteproject",(req,res)=>{
+    if(!req.session.user){
+        res.redirect("/api/login")
+        return
+    }
+    Project.destroy({
+        where: {
+            id:req.body.id
+        }
+    }).then(deleteProject=>{
+        res.json(deleteProject)
+    }).catch(err=>{
+        console.log(err)
+        res.status(500).json({message:"An Error Occured",err:err})
+    })
+})
+
 router.put("/projectimg",(req,res)=>{
     if(!req.session.user){
         res.redirect("/api/login")
