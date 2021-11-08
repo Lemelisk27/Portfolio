@@ -1,0 +1,26 @@
+<div class="card mx-auto col-lg-6 col-sm-11 mt-1 bg-dark text-light">
+    {{#if user.profile_pic}}
+    <img src="{{user.profile_pic}}" class="card-img-top mt-2" alt="profile picture">
+    {{/if}}
+    <div class="card-body">
+        <h4>{{user.first_name}} {{user.last_name}}</h4>
+        <h5 class="card-title">{{user.username}}</h5>
+        <h5>Address:</h5>
+        <div class="ml-3">
+            <p class="mb-0">{{user.street}}</p>
+            <p>{{user.city}}, {{user.state}} {{user.zip}}</p>
+        </div>
+        <h5>About Me:</h5>
+        <p class="ml-3">{{user.bio}}</p>
+    </div>
+    <ul class="list-group list-group-flush text-dark">
+        <li class="list-group-item">Phone: {{user.phone}}</li>
+        <li class="list-group-item">Email: {{user.email}}</li>
+        <li class="list-group-item"><a href="https://www.linkedin.com/in/{{user.linkedin}}/" target="_blank">LinkedIn</a></li>
+        <li class="list-group-item"><a href="https://github.com/{{user.github}}/" target="_blank">Github</a></li>
+    </ul>
+    <div class="card-body text-center">
+        <a href="/api/updateprofile" class="card-link">Edit Profile</a>
+        <a href="/api/password" class="card-link">Change Password</a>
+    </div>
+</div>

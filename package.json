@@ -1,0 +1,32 @@
+{
+  "name": "Portfolio",
+  "version": "1.0.0",
+  "description": "![license badge](https://img.shields.io/badge/license-MIT-blue) ## Description This is my protfolio, I've written a new site with a backend that allows me to update it on the fly. In order to update the site, you have to log in. But the actual portfolio can be viewed by anyone without logging in. ## Table of Contents - [Installation](#installation) - [Usage](#usage) - [Credits](#credits) - [License](#license) ## Installation Dependencies: - bcrypt - cloudinary - connect-session-sequelize - dotenv - express - express-handlebars - express-session - mysql2 - sequelize ## Usage Link - [Portfolio](https://lemelisk27.herokuapp.com/)   API route - [API Route](https://lemelisk27.herokuapp.com/api)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Lemelisk27/Portfolio.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Lemelisk27/Portfolio/issues"
+  },
+  "homepage": "https://github.com/Lemelisk27/Portfolio#readme",
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cloudinary": "^1.27.1",
+    "connect-session-sequelize": "^7.1.2",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "express-handlebars": "^5.3.4",
+    "express-session": "^1.17.2",
+    "mysql2": "^2.3.3-rc.0",
+    "sequelize": "^6.9.0"
+  }
+}
