@@ -1,9 +1,9 @@
 <main class="mx-5 mt-5">
-    <h1>About Me</h1>
+    <h1 id="about">About Me</h1>
     <div class="pt-1 my-2 bg-dark col-12"></div>
     <p class="bg-light rounded p-2">{{user.bio}}</p>
 
-    <h1>Work</h1>
+    <h1 id="work">Work</h1id>
     <div class="pt-1 my-2 bg-dark col-12"></div>
     <div class="d-flex flex-column mx-auto col-10">
         {{#if primary}}
@@ -26,7 +26,7 @@
         </div>
     </div>
 
-    <h1>Contact Me</h1>
+    <h1 id="contact">Contact Me</h1>
     <div class="pt-1 my-2 bg-dark col-12"></div>
     <div class="d-flex flex-row justify-content-between col-10 mx-auto">
         <p class="text-light">Phone: {{user.phone}}</p>

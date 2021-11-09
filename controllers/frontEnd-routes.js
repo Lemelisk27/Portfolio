@@ -34,4 +34,8 @@ router.get("/",(req,res)=>{
     })
 })
 
+router.get("/resume",(req,res)=>{
+    res.render("resume")
+})
+
 module.exports = router
