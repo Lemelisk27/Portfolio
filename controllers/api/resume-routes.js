@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const sequelize = require('../../config/connection');
-const {User,Resume,Skill,Experience,Role} = require("../../models")
+const {User,Resume,Skill,Experience,Role,Education,Degree} = require("../../models")
 
 router.get("/",(req,res)=>{
     if(!req.session.user){
@@ -20,12 +20,26 @@ router.get("/",(req,res)=>{
                     attributes:{
                         include: [
                             [sequelize.fn('date_format', sequelize.col('start_date'), '%m-%Y'), 'start_date'],
-                            [sequelize.fn('date_format', sequelize.col('end_date'), '%m-%Y'), 'end_date']
+                            [sequelize.fn('date_format', sequelize.col('end_date'), '%m-%Y'), 'start_date']
                         ]
                     },
                     include: [
                         {
                             model: Role
+                        }
+                    ]
+                },
+                {
+                    model: Education,
+                    attributes:{
+                        include: [
+                            [sequelize.fn('date_format', sequelize.col('ed_start_date'), '%m-%Y'), 'ed_start_date'],
+                            [sequelize.fn('date_format', sequelize.col('ed_end_date'), '%m-%Y'), 'ed_end_date']
+                        ]
+                    },
+                    include: [
+                        {
+                            model: Degree
                         }
                     ]
                 }

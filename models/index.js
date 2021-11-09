@@ -5,6 +5,8 @@ const Resume = require("./resume")
 const Skill = require("./skill")
 const Experience = require("./experience")
 const Role = require("./role")
+const Education = require("./education")
+const Degree = require("./degree")
 
 User.hasMany(Image, {
     onDelete: "CASCADE"
@@ -42,6 +44,18 @@ Experience.hasMany(Role, {
 
 Role.belongsTo(Experience)
 
+Resume.hasMany(Education, {
+    onDelete: "CASCADE"
+})
+
+Education.belongsTo(Resume)
+
+Education.hasMany(Degree, {
+    onDelete: "CASCADE"
+})
+
+Degree.belongsTo(Education)
+
 module.exports={
     User,
     Image,
@@ -49,5 +63,7 @@ module.exports={
     Resume,
     Skill,
     Experience,
-    Role
+    Role,
+    Education,
+    Degree
 }

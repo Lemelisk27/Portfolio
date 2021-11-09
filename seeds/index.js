@@ -5,6 +5,8 @@ const seedResume = require("./resume-seeds")
 const seedSkill = require("./skill-seeds")
 const seedExperiences = require("./experience-seeds")
 const seedRoles = require("./role-seeds")
+const seedEducation = require("./education-seeds")
+const seedDegree = require("./degree-seeds")
 
 const sequelize = require("../config/connection")
 
@@ -25,6 +27,10 @@ const seedAll = async () => {
     console.log('\n-----EXPERIENCES SYNCED-----\n')
     await seedRoles()
     console.log('\n-----ROLES SYNCED-----\n')
+    await seedEducation()
+    console.log('\n-----EDUCATION SYNCED-----\n')
+    await seedDegree()
+    console.log('\n-----DEGREES SYNCED-----\n')
     process.exit(0)
 }
 
