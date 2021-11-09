@@ -7,17 +7,6 @@ This is my protfolio, I've written a new site with a backend that allows me to u
 - [Usage](#usage)
 - [Credits](#credits)
 - [License](#license)
-## Installation
-Dependencies:
-- bcrypt
-- cloudinary
-- connect-session-sequelize
-- dotenv
-- express
-- express-handlebars
-- express-session
-- mysql2
-- sequelize
 ## Usage
 Link - [Portfolio](https://lemelisk27.herokuapp.com/)  
 API route - [API Route](https://lemelisk27.herokuapp.com/api)  
@@ -29,6 +18,19 @@ To logon to the back end:
 (These will be changed after it's graded)  
   
 The backend section allows the user to add, change, or delete information which will change the overall portfolio.
+  
+![Screenshot](images/screenshot.png)
+## Installation
+Dependencies:
+- bcrypt
+- cloudinary
+- connect-session-sequelize
+- dotenv
+- express
+- express-handlebars
+- express-session
+- mysql2
+- sequelize
 ## Credits
 Zach Smith - [GitHub Profile](https://github.com/Lemelisk27)  
 ## License
