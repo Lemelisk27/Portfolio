@@ -1,0 +1,9 @@
+<main class="d-flex flex-column justify-content-center mx-5 mt-5">
+    <h1 class="text-center text-light">{{project.title}}</h1>
+    <img src="{{project.img}}" class="col-9 mx-auto my-3 border rounded border-dark p-0" alt="User Project {{project.id}}">
+    <h5 class="text-center">{{project.description}}</h5>
+    <div class="d-flex flex-row justify-content-between col-4 mx-auto mt-5">
+        <a href="{{site_url}}" target="_blank" class="text-light">Website: {{project.title}}</a>
+        <a href="{{github_url}}" target="_blank" class="text-light">GitHub Repository</a>
+    </div>
+</main>

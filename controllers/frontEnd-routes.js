@@ -85,4 +85,31 @@ router.get("/resume",(req,res)=>{
     })
 })
 
+router.get("/:id",(req,res)=>{
+    Project.findOne({
+        where: {
+            id:req.params.id
+        }
+    }).then(projectData=>{
+        const hbsProject = projectData.get({plain:true})
+        User.findOne({
+            where: {
+                id:1
+            }
+        }).then(userData=>{
+            const hbsUser = userData.get({plain:true})
+            res.render("projects",{
+                user:hbsUser,
+                project:hbsProject
+            })
+        }).catch(err=>{
+            console.log(err)
+            res.status(500).json({message:"An Error Occured",err:err})
+        })
+    }).catch(err=>{
+        console.log(err)
+        res.status(500).json({message:"An Error Occured",err:err})
+    })
+})
+
 module.exports = router
