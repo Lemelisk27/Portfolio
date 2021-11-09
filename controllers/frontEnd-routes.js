@@ -85,7 +85,7 @@ router.get("/resume",(req,res)=>{
     })
 })
 
-router.get("/:id",(req,res)=>{
+router.get("/project/:id",(req,res)=>{
     Project.findOne({
         where: {
             id:req.params.id
