@@ -11,7 +11,7 @@ const imageData = [
     },
     {
         UserId: 1,
-        url: "https://res.cloudinary.com/coder-mingle/image/upload/v1636339744/portfolio/cogb1dbn8idc1giisfnc.png"
+        url: "https://res.cloudinary.com/coder-mingle/image/upload/v1636442009/portfolio/qrjbjuxsur4j2drxavt2.png"
     },
     {
         UserId: 1,
@@ -19,7 +19,7 @@ const imageData = [
     },
     {
         UserId: 1,
-        url: "https://res.cloudinary.com/coder-mingle/image/upload/v1636339742/portfolio/sd6uyplosvprp9fb0iwr.png"
+        url: "https://res.cloudinary.com/coder-mingle/image/upload/v1636441775/portfolio/szo9opaqb7uewwejdn1y.png"
     }
 ]
 
