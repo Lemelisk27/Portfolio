@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const sequelize = require('../../config/connection');
-const {User,Image,Project} = require("../../models")
+const {User,Image,Project,Resume,Skill} = require("../../models")
 
 router.get("/",(req,res)=>{
     const api = true
@@ -204,6 +204,31 @@ router.get("/applytoproject/:id",(req,res)=>{
                 apipage:apipage
             })
         })
+    })
+})
+
+router.get("/viewresumes",(req,res)=>{
+    if(!req.session.user){
+        res.redirect("/api/login")
+        return
+    }
+    const api = true
+    const apipage = "/viewresumes"
+    User.findOne({
+        where: {
+            id:req.session.user.id
+        },
+        include:[{model: Resume,include: [{model: Skill}]}]
+    }).then(userData=>{
+        const hbsUser = userData.get({plain:true})
+        res.render("viewresumes",{
+            user:hbsUser,
+            api:api,
+            apipage:apipage
+        })
+    }).catch(err=>{
+        console.log(err)
+        res.status(500).json({message:"An Error Occured",err:err})
     })
 })
 

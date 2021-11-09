@@ -52,6 +52,10 @@ User.init({
         type: DataTypes.STRING,
         allowNull: false
     },
+    portfolio: {
+        type: DataTypes.TEXT,
+        allowNull: false
+    },
     street: {
         type: DataTypes.STRING,
         allowNull: false

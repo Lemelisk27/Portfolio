@@ -57,34 +57,51 @@ router.put("/", async (req,res)=>{
     let updatedPassword = ""
     if(req.body.password){
         updatedPassword = await bcrypt.hash(req.body.password,10)
-    }
-    User.update(
-        {
-            first_name:req.body.first_name,
-            last_name:req.body.last_name,
-            email:req.body.email,
-            profile_pic:req.body.profile_pic,
-            bio:req.body.bio,
-            phone:req.body.phone,
-            linkedin:req.body.linkedin,
-            github:req.body.github,
-            street:req.body.street,
-            city:req.body.city,
-            state:req.body.state,
-            zip:req.body.zip,
-            password:updatedPassword
-        },
-        {
-            where: {
-                id:req.session.user.id
+        User.update(
+            {
+                password:updatedPassword
+            },
+            {
+                where: {
+                    id:req.session.user.id
+                }
             }
-        }
-    ).then(updateUser=>{
-        res.json(updateUser)
-    }).catch(err=>{
-        console.log(err)
-        res.status(500).json({message:"An Error Occured",err:err})
-    })
+        ).then(updatePass=>{
+            res.json(updatePass)
+        }).catch(err=>{
+            console.log(err)
+            res.status(500).json({message:"An Error Occurer",err:err})
+        })
+    }
+    else {
+        User.update(
+            {
+                first_name:req.body.first_name,
+                last_name:req.body.last_name,
+                email:req.body.email,
+                profile_pic:req.body.profile_pic,
+                bio:req.body.bio,
+                phone:req.body.phone,
+                linkedin:req.body.linkedin,
+                github:req.body.github,
+                street:req.body.street,
+                city:req.body.city,
+                state:req.body.state,
+                zip:req.body.zip,
+                portfolio:req.body.portfolio
+            },
+            {
+                where: {
+                    id:req.session.user.id
+                }
+            }
+        ).then(updateUser=>{
+            res.json(updateUser)
+        }).catch(err=>{
+            console.log(err)
+            res.status(500).json({message:"An Error Occured",err:err})
+        })
+    }
 })
 
 module.exports = router

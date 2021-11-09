@@ -9,6 +9,7 @@ let email
 let github
 let linkedin
 let bio
+let portfolio
 let submitBtn = document.querySelector("#submitBtn")
 
 document.getElementById("firstName").addEventListener("change",()=>{
@@ -44,6 +45,9 @@ document.getElementById("linkedin").addEventListener("change",()=>{
 document.getElementById("bio").addEventListener("change",()=>{
     bio = document.getElementById("bio").value
 })
+document.getElementById("portfolio").addEventListener("change",()=>{
+    portfolio = document.getElementById("portfolio").value
+})
 
 submitBtn.addEventListener("click",(e)=>{
     e.preventDefault()
@@ -58,7 +62,8 @@ submitBtn.addEventListener("click",(e)=>{
         email:email,
         github:github,
         linkedin:linkedin,
-        bio:bio
+        bio:bio,
+        portfolio:portfolio
     }
     fetch("/api/users",{
         method:"PUT",

@@ -1,6 +1,8 @@
 const User = require("./User")
 const Image = require("./Image")
 const Project = require("./Project")
+const Resume = require("./resume")
+const Skill = require("./skill")
 
 User.hasMany(Image, {
     onDelete: "CASCADE"
@@ -14,8 +16,22 @@ User.hasMany(Project,{
 
 Project.belongsTo(User)
 
+User.hasMany(Resume, {
+    onDelete: "CASCADE"
+})
+
+Resume.belongsTo(User)
+
+Resume.hasMany(Skill, {
+    onDelete: "CASCADE"
+})
+
+Skill.belongsTo(Resume)
+
 module.exports={
     User,
     Image,
-    Project
+    Project,
+    Resume,
+    Skill
 }

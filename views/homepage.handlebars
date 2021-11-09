@@ -9,7 +9,7 @@
         {{#if primary}}
         <div class="d-flex flex-column col-12 mx-auto">
             <h2 class="mx-auto text-light">{{primary.title}}</h2>
-            <a href="/projects/{{primary.id}}" class="d-flex flex-column col-12 mx-auto">
+            <a href="{{primary.site_url}}" target="_blank" class="d-flex flex-column col-12 mx-auto">
                 <img src="{{primary.img}}" alt="User Project {{primary.id}}">
             </a>
         </div>
@@ -18,7 +18,7 @@
             {{#each project}}
                 <div class="d-flex flex-column col-12 mx-auto my-2">
                     <h2 class="mx-auto text-light">{{title}}</h2>
-                    <a href="/projects/{{id}}" class="d-flex flex-column col-12 mx-auto">
+                    <a href="{{site_url}}" target="_blank" class="d-flex flex-column col-12 mx-auto">
                         <img src="{{img}}" alt="User Project {{id}}">
                     </a>
                 </div>

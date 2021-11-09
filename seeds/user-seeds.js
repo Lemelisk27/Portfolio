@@ -12,6 +12,7 @@ const userData = [
         phone: "425-698-5340",
         linkedin: "Lemelisk27",
         github: "Lemelisk27",
+        portfolio: "https://lemelisk27.herokuapp.com/",
         street: "23403 SE 262nd ST",
         city: "Maple Valley",
         state: "WA",
