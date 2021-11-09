@@ -2,4 +2,36 @@
     <h1>About Me</h1>
     <div class="pt-1 my-2 bg-dark col-12"></div>
     <p class="bg-light rounded p-2">{{user.bio}}</p>
+
+    <h1>Work</h1>
+    <div class="pt-1 my-2 bg-dark col-12"></div>
+    <div class="d-flex flex-column mx-auto col-10">
+        {{#if primary}}
+        <div class="d-flex flex-column col-12 mx-auto">
+            <h2 class="mx-auto text-light">{{primary.title}}</h2>
+            <a href="/projects/{{primary.id}}" class="d-flex flex-column col-12 mx-auto">
+                <img src="{{primary.img}}" alt="User Project {{primary.id}}">
+            </a>
+        </div>
+        {{/if}}
+        <div class="d-flex flex-row flex-wrap mx-auto col-10">
+            {{#each project}}
+                <div class="d-flex flex-column col-12 mx-auto my-2">
+                    <h2 class="mx-auto text-light">{{title}}</h2>
+                    <a href="/projects/{{id}}" class="d-flex flex-column col-12 mx-auto">
+                        <img src="{{img}}" alt="User Project {{id}}">
+                    </a>
+                </div>
+            {{/each}}
+        </div>
+    </div>
+
+    <h1>Contact Me</h1>
+    <div class="pt-1 my-2 bg-dark col-12"></div>
+    <div class="d-flex flex-row justify-content-between col-10 mx-auto">
+        <p class="text-light">Phone: {{user.phone}}</p>
+        <a href="mailto:{{user.email}}" class="text-light">{{user.email}}</a>
+        <a href="https://github.com/{{user.github}}/" target="_blank" class="text-light">Github</a>
+        <a href="https://www.linkedin.com/in/{{user.linkedin}}/" target="_blank" class="text-light">LinkedIn</a>
+    </div>
 </main>

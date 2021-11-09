@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const sequelize = require('../config/connection');
-const {User} = require("../models")
+const {User,Project} = require("../models")
 
 router.get("/",(req,res)=>{
     User.findOne({
@@ -10,8 +10,26 @@ router.get("/",(req,res)=>{
         }
     }).then(userData=>{
         const hbsUser = userData.get({plain:true})
-        res.render("homepage",{
-            user:hbsUser
+        Project.findOne({
+            where: {
+                UserId:1,
+                primary:true
+            }
+        }).then(primary=>{
+            const hbsPrimary = primary.get({plain:true})
+            Project.findAll({
+                where: {
+                    UserId:1,
+                    primary: false
+                }
+            }).then(proData=>{
+                const hbsPro = proData.map(pro=>pro.get({plain:true}))
+                res.render("homepage",{
+                    user:hbsUser,
+                    primary:hbsPrimary,
+                    project:hbsPro
+                })
+            })
         })
     })
 })
