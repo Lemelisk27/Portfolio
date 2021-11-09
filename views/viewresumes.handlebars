@@ -1,6 +1,6 @@
 <main class="d-flex flex-column col-11 bg-light mx-auto mt-1">
     <div class="d-flex flex-column justify-content-center mx-auto col-5">
-        <h2 class="text-center mb-0">{{user.first_name}} {{user.last_name}}</h2>
+        <h2 class="text-center mb-0 mt-5">{{user.first_name}} {{user.last_name}}</h2>
         <p class="text-center mb-0">{{user.city}}, {{user.state}}</p>
         <div class="d-flex flex-row justify-content-around">
             <p class="mb-0">Phone: {{user.phone}}</p>
@@ -20,13 +20,32 @@
         </div>
     </div>
     <div class="d-flex flex-column justify-content-center mx-auto col-10">
-        <p><u><strong>About Me:</strong></u></p>
+        <p><u><strong>About Me</strong></u></p>
         <p class="ml-4">{{user.bio}}</p>
-        <p><u><strong>Skills:</strong></u></p>
-        <div class="ml-4">
+        <p><u><strong>Skills</strong></u></p>
+        <div class="ml-4 mb-3">
             {{#each user.Resumes}}
                 {{#each Skills}}
                 <p class="mb-0"><strong>{{title}}: </strong>{{skills}}</p>
+                {{/each}}
+            {{/each}}
+        </div>
+        <p><u><strong>Experience</strong></u></p>
+        <div class="ml-4">
+            {{#each user.Resumes}}
+                {{#each Experiences}}
+                    <div class="d-flex flex-row justify-content-between">
+                        <p><strong>{{employer}}</strong></p>
+                        <div class="d-flex flex-row">
+                            <p><strong>{{start_date}} -</strong></p>
+                            <p class="ml-1"><strong> {{end_date}}</strong></p>
+                        </div>
+                    </div>
+                    <ul>
+                        {{#each Roles}}
+                            <li>{{role}}</li>
+                        {{/each}}
+                    </ul>
                 {{/each}}
             {{/each}}
         </div>

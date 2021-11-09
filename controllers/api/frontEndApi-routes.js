@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const sequelize = require('../../config/connection');
-const {User,Image,Project,Resume,Skill} = require("../../models")
+const {User,Image,Project,Resume,Skill,Experience,Role} = require("../../models")
 
 router.get("/",(req,res)=>{
     const api = true
@@ -218,7 +218,27 @@ router.get("/viewresumes",(req,res)=>{
         where: {
             id:req.session.user.id
         },
-        include:[{model: Resume,include: [{model: Skill}]}]
+        include:[{model: Resume,
+            include: [
+                {
+                    model: Skill
+                },
+                {
+                    model: Experience,
+                    attributes:{
+                        include: [
+                            [sequelize.fn('date_format', sequelize.col('start_date'), '%m-%Y'), 'start_date'],
+                            [sequelize.fn('date_format', sequelize.col('end_date'), '%m-%Y'), 'end_date']
+                        ]
+                    },
+                    include: [
+                        {
+                            model: Role
+                        }
+                    ]
+                }
+            ]
+        }]
     }).then(userData=>{
         const hbsUser = userData.get({plain:true})
         res.render("viewresumes",{

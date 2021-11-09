@@ -3,6 +3,8 @@ const seedImages = require("./image-seeds")
 const seedProjects = require("./project-seeds")
 const seedResume = require("./resume-seeds")
 const seedSkill = require("./skill-seeds")
+const seedExperiences = require("./experience-seeds")
+const seedRoles = require("./role-seeds")
 
 const sequelize = require("../config/connection")
 
@@ -19,6 +21,10 @@ const seedAll = async () => {
     console.log('\n-----RESUMES SYNCED-----\n')
     await seedSkill()
     console.log('\n-----SKILLS SYNCED-----\n')
+    await seedExperiences()
+    console.log('\n-----EXPERIENCES SYNCED-----\n')
+    await seedRoles()
+    console.log('\n-----ROLES SYNCED-----\n')
     process.exit(0)
 }
 
