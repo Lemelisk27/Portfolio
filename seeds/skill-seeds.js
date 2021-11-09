@@ -3,13 +3,8 @@ const {Skill} = require("../models")
 const skillData = [
     {
         ResumeId: 1,
-        title: "Industry Knowledge",
-        skills: "Programming, web development, web design, time management"
-    },
-    {
-        ResumeId: 1,
-        title: "Tools & Technologies",
-        skills: "HTML, Cascading Style Sheets (CSS), JavaScript, Bootstrap, Git, API testing"
+        title: "Other Skills",
+        skills: "Independent projects, independent travel, CDL Class A, truck driving"
     },
     {
         ResumeId: 1,
@@ -18,8 +13,13 @@ const skillData = [
     },
     {
         ResumeId: 1,
-        title: "Other Skills",
-        skills: "Independent projects, independent travel, CDL Class A, truck driving"
+        title: "Tools & Technologies",
+        skills: "HTML, Cascading Style Sheets (CSS), JavaScript, Bootstrap, Git, API testing"
+    },
+    {
+        ResumeId: 1,
+        title: "Industry Knowledge",
+        skills: "Programming, web development, web design, time management"
     }
 ]
 

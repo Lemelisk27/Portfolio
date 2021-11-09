@@ -1,9 +1,34 @@
-<main class="bg-light mx-5 mt-1">
-    <h2>{{user.first_name}} {{user.last_name}}</h2>
-    <p>{{user.city}}, {{user.state}}</p>
-    <p>Phone: {{user.phone}}</p>
-    <p>Email: {{user.email}}</p>
-    <p>LinkedIn: </p><a href="http://www.linkedin.com/in/{{user.linkedin}}">http://www.linkedin.com/in/{{user.linkedin}}</a>
-    <p>GitHub: </p><a href="https://github.com/{{user.github}}">https://github.com/{{user.github}}</a>
-    <p>Portfolio: </p><a href="{{user.portfolio}}">{{user.portfolio}}</a>
+<main class="d-flex flex-column col-11 bg-light mx-auto mt-1">
+    <div class="d-flex flex-column justify-content-center mx-auto col-5">
+        <h2 class="text-center mb-0">{{user.first_name}} {{user.last_name}}</h2>
+        <p class="text-center mb-0">{{user.city}}, {{user.state}}</p>
+        <div class="d-flex flex-row justify-content-around">
+            <p class="mb-0">Phone: {{user.phone}}</p>
+            <p class="mb-0">Email: {{user.email}}</p>
+        </div>
+        <div class="d-flex flex-row justify-content-center">
+            <p class="pr-1 mb-0">LinkedIn:</p>
+            <a class="mb-0" href="http://www.linkedin.com/in/{{user.linkedin}}">http://www.linkedin.com/in/{{user.linkedin}}</a>
+        </div>
+        <div class="d-flex flex-row justify-content-center">
+            <p class="pr-1 mb-0">GitHub:</p>
+            <a class="mb-0" href="https://github.com/{{user.github}}">https://github.com/{{user.github}}</a>
+        </div>
+        <div class="d-flex flex-row justify-content-center mb-4">
+            <p class="pr-1 mb-0">Portfolio:</p>
+            <a class="mb-0" href="{{user.portfolio}}">{{user.portfolio}}</a>
+        </div>
+    </div>
+    <div class="d-flex flex-column justify-content-center mx-auto col-10">
+        <p><u><strong>About Me:</strong></u></p>
+        <p class="ml-4">{{user.bio}}</p>
+        <p><u><strong>Skills:</strong></u></p>
+        <div class="ml-4">
+            {{#each user.Resumes}}
+                {{#each Skills}}
+                <p class="mb-0"><strong>{{title}}: </strong>{{skills}}</p>
+                {{/each}}
+            {{/each}}
+        </div>
+    </div>
 </main>
