@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const sequelize = require('../config/connection');
-const {User,Project} = require("../models")
+const {User,Project,Resume,Skill,Experience,Role,Education,Degree} = require("../models")
 
 router.get("/",(req,res)=>{
     User.findOne({
@@ -35,7 +35,54 @@ router.get("/",(req,res)=>{
 })
 
 router.get("/resume",(req,res)=>{
-    res.render("resume")
+    User.findOne({
+        where: {
+            id:1
+        },
+        include:[{model: Resume,
+            include: [
+                {
+                    model: Skill
+                },
+                {
+                    model: Experience,
+                    attributes:{
+                        include: [
+                            [sequelize.fn('date_format', sequelize.col('start_date'), '%m-%Y'), 'start_date'],
+                            [sequelize.fn('date_format', sequelize.col('end_date'), '%m-%Y'), 'end_date']
+                        ]
+                    },
+                    include: [
+                        {
+                            model: Role
+                        }
+                    ]
+                },
+                {
+                    model: Education,
+                    attributes:{
+                        include: [
+                            [sequelize.fn('date_format', sequelize.col('ed_start_date'), '%m-%Y'), 'ed_start_date'],
+                            [sequelize.fn('date_format', sequelize.col('ed_end_date'), '%m-%Y'), 'ed_end_date']
+                        ]
+                    },
+                    include: [
+                        {
+                            model: Degree
+                        }
+                    ]
+                }
+            ]
+        }]
+    }).then(userData=>{
+        const hbsUser = userData.get({plain:true})
+        res.render("resume",{
+            user:hbsUser
+        })
+    }).catch(err=>{
+        console.log(err)
+        res.status(500).json({message:"An Error Occured",err:err})
+    })
 })
 
 module.exports = router
