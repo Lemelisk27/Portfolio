@@ -4,7 +4,7 @@ const userData = [
     {
         first_name: "Zach",
         last_name: "Smith",
-        username: "zsmith",
+        username: "Lemelisk27",
         email: "Lemelisk27@gmail.com",
         password: "password",
         profile_pic: "https://res.cloudinary.com/coder-mingle/image/upload/v1636331906/portfolio/me_rx9pyi.jpg",
