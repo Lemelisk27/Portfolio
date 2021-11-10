@@ -54,4 +54,17 @@ router.get("/",(req,res)=>{
     })
 })
 
+router.get("/createcategory",(req,res)=>{
+    if(!req.session.user){
+        res.redirect("/api/login")
+        return
+    }
+    const api = true
+    const apipage = "/resumes/createcategory"
+    res.render("createcategory",{
+        api:api,
+        apipage:apipage
+    })
+})
+
 module.exports = router
