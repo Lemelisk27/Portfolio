@@ -266,4 +266,17 @@ router.get("/viewresumes",(req,res)=>{
     })
 })
 
+router.get("/editresume",(req,res)=>{
+    if(!req.session.user){
+        res.redirect("/api/login")
+        return
+    }
+    const api = true
+    const apipage = "/editresume"
+    res.render("editresume",{
+        api:api,
+        apipage:apipage
+    })
+})
+
 module.exports = router

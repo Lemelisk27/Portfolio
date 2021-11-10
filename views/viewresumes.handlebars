@@ -72,4 +72,13 @@
             {{/each}}
         </div>
     </div>
+    <div class="col-12 bg-dark pt-2"></div>
+    <button id="editBtn" class="bg-dark col-2 my-4 text-light mx-auto">Edit Resume</button>
 </main>
+
+<script>
+    document.querySelector("#editBtn").addEventListener("click",(e)=>{
+        e.preventDefault()
+        location.href = "/api/editresume"
+    })
+</script>
